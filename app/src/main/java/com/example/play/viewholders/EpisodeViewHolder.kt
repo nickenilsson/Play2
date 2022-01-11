@@ -11,7 +11,7 @@ class EpisodeViewHolder(val binding: EpisodeViewBinding): RecyclerView.ViewHolde
         val subtitle: String?,
         val imageURL: URL?
         )
-    
+
     fun bind(viewData: ViewData) {
         binding.textViewTitle.setText(viewData.title)
         binding.textViewSubtitle.setText(viewData.subtitle)

@@ -10,7 +10,7 @@ class EpisodeRecyclerViewAdapter(val items: List<EpisodeViewHolder.ViewData>): R
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EpisodeViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = EpisodeViewBinding.inflate(layoutInflater)
+        val binding = EpisodeViewBinding.inflate(layoutInflater, parent, false)
         return EpisodeViewHolder(binding)
     }
 
