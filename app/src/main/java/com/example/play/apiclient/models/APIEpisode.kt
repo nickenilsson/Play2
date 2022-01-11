@@ -7,11 +7,11 @@ data class APIEpisode(
     val title: String,
     val description: String?,
     val listenpodfile: APIPodfile?,
-    val imageurl: URL?
+    val imageurl: String?
 )
 
 data class APIPodfile(
-    val url: URL
+    val url: String
 )
 
 data class APIEpisodesResponse(

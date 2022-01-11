@@ -7,7 +7,7 @@ import java.lang.Exception
 
 class APIClient {
     fun getPopularEpisodes(completionLambda: (Result<APIEpisodesResponse>) -> Unit) {
-        val httpasync = "https://api.sr.se/api/v2/episodes/getmostlistened?format=json"
+        "https://api.sr.se/api/v2/episodes/getmostlistened?format=json"
             .httpGet()
             .responseString { request, response, result ->
                 when (result) {

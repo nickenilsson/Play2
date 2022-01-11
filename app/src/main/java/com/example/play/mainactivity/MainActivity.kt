@@ -22,6 +22,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
 
+        val adapter = EpisodeRecyclerViewAdapter()
+        binding.recyclerView.adapter = adapter
+
+        viewModel.listItems.observe(this) { listItems ->
+            adapter.setItems(listItems)
+        }
+
+        viewModel.load()
 
     }
 }

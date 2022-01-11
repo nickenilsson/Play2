@@ -8,7 +8,8 @@ import java.net.URL
 
 fun APIEpisode.asEpisode(): Episode? {
     if (listenpodfile?.url != null) {
-        return Episode(title, description, listenpodfile.url, imageurl)
+        // TODO: Parse URLs
+        return Episode(title, description, null, null)
     } else {
         return null
     }
