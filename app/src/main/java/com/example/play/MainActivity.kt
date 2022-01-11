@@ -7,15 +7,8 @@ import androidx.lifecycle.ViewModel
 import com.example.play.databinding.ActivityMainBinding
 
 interface MainActivityViewModel {
-    val title: String
-    val subtitle: String
-}
 
-class MockedMainActivityViewModel: MainActivityViewModel {
-    override val title: String = "TestTitle"
-    override val subtitle: String = "TestSubtitle"
 }
-
 class MainActivity : AppCompatActivity() {
 
     private val viewModel: MainActivityViewModel by viewModels()
@@ -27,11 +20,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-        binding.textViewTitle.setText(viewModel.title)
-
-        binding.textViewSubtitle.setText(viewModel.subtitle)
-
 
     }
 }
