@@ -44,6 +44,7 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.github.kittinunf.fuel:fuel:3.1.0'
     def lifecycle_version = "2.4.0"
     def activity_version = "1.4.0"
     def fragment_version = "1.4.0"
