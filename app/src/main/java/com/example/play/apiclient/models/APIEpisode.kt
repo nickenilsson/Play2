@@ -6,7 +6,8 @@ data class APIEpisode(
     val id: Int,
     val title: String,
     val description: String?,
-    val listenpodfile: APIPodfile?
+    val listenpodfile: APIPodfile?,
+    val imageurl: URL?
 )
 
 data class APIPodfile(
