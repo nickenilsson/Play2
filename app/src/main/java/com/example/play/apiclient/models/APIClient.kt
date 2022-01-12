@@ -14,7 +14,7 @@ class APIClient {
                     is com.github.kittinunf.result.Result.Success -> {
                         val responseString = result.get()
                         val apiEpisodesResponse = Klaxon().parse<APIEpisodesResponse>(responseString)
-                        if (apiEpisodesResponse != null){
+                        if (apiEpisodesResponse != null) {
                             completionLambda(Result.success(apiEpisodesResponse))
                         }
                         else {
