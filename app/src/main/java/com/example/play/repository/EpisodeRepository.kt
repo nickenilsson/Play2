@@ -4,7 +4,7 @@ import com.example.play.apiclient.models.APIClient
 import com.example.play.apiclient.models.APIEpisode
 import com.example.play.apiclient.models.APIEpisodesResponse
 import com.example.play.models.Episode
-import java.net.URL
+import java.lang.Exception
 
 fun APIEpisode.asEpisode(): Episode? {
     if (listenpodfile?.url != null) {
