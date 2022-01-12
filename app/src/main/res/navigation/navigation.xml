@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/episodeListFragment">
+
+    <fragment
+        android:id="@+id/episodeListFragment"
+        android:name="com.example.play.EpisodeListFragment"
+        android:label="EpisodeListFragment" >
+        <action
+            android:id="@+id/action_episodeListFragment_to_episodeDetailedFragment"
+            app:destination="@id/episodeDetailedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/episodeDetailedFragment"
+        android:name="com.example.play.EpisodeDetailedFragment"
+        android:label="EpisodeDetailedFragment" />
+</navigation>

@@ -2,6 +2,7 @@ package com.example.play.mainactivity
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.play.EpisodeListFragment
 import com.example.play.MainActivity
 import com.example.play.repository.EpisodeRepository
 import com.example.play.viewholders.EpisodeViewHolder
@@ -10,7 +11,7 @@ class MainActivityViewModel: ViewModel() {
 
     private val repository = EpisodeRepository()
 
-    val viewState: MutableLiveData<MainActivity.ViewState> = MutableLiveData(MainActivity.ViewState.Loading())
+    val viewState: MutableLiveData<EpisodeListFragment.ViewState> = MutableLiveData(EpisodeListFragment.ViewState.Loading())
 
     fun load() {
         repository.getPopularEpisodes { result ->
@@ -23,9 +24,9 @@ class MainActivityViewModel: ViewModel() {
                         episode.imageURL
                     )
                 }
-                viewState.postValue(MainActivity.ViewState.Loaded(viewData))
+                viewState.postValue(EpisodeListFragment.ViewState.Loaded(viewData))
             }, { exception ->
-                viewState.postValue(MainActivity.ViewState.Error())
+                viewState.postValue(EpisodeListFragment.ViewState.Error())
             })
         }
     }
