@@ -16,7 +16,12 @@ class MainActivityViewModel: ViewModel() {
         repository.getPopularEpisodes { result ->
             result.fold({ episodes ->
                 val viewData = episodes.map { episode ->
-                    EpisodeViewHolder.ViewData(episode.title, episode.description, episode.imageURL)
+                    EpisodeViewHolder.ViewData(
+                        episode.title,
+                        episode.description,
+                        episode.audioURL,
+                        episode.imageURL
+                    )
                 }
                 viewState.postValue(MainActivity.ViewState.Loaded(viewData))
             }, { exception ->

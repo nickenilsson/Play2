@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.play.databinding.EpisodeViewBinding
 import com.example.play.viewholders.EpisodeViewHolder
 
-class EpisodeRecyclerViewAdapter(): RecyclerView.Adapter<EpisodeViewHolder>() {
+class EpisodeRecyclerViewAdapter(val onClickHandler: (EpisodeViewHolder.ViewData) -> Unit): RecyclerView.Adapter<EpisodeViewHolder>() {
 
     private var items: List<EpisodeViewHolder.ViewData> = listOf()
 
@@ -18,7 +18,7 @@ class EpisodeRecyclerViewAdapter(): RecyclerView.Adapter<EpisodeViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EpisodeViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = EpisodeViewBinding.inflate(layoutInflater, parent, false)
-        return EpisodeViewHolder(binding)
+        return EpisodeViewHolder(binding, onClickHandler)
     }
 
     override fun onBindViewHolder(holder: EpisodeViewHolder, position: Int) {

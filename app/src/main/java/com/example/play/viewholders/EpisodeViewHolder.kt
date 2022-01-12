@@ -3,13 +3,16 @@ package com.example.play.viewholders
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.play.databinding.EpisodeViewBinding
-import java.net.URL
 
-class EpisodeViewHolder(val binding: EpisodeViewBinding): RecyclerView.ViewHolder(binding.root) {
+class EpisodeViewHolder(
+    val binding: EpisodeViewBinding,
+    val onClickHandler: (ViewData) -> Unit)
+    : RecyclerView.ViewHolder(binding.root) {
 
     data class ViewData(
         val title: String,
         val subtitle: String?,
+        val audioURL: String,
         val imageURL: String?
         )
 
@@ -18,6 +21,10 @@ class EpisodeViewHolder(val binding: EpisodeViewBinding): RecyclerView.ViewHolde
         binding.textViewSubtitle.setText(viewData.subtitle)
 
         Glide.with(binding.root).load(viewData.imageURL).into(binding.imageView)
+
+        binding.root.setOnClickListener {
+            onClickHandler(viewData)
+        }
     }
 
 }

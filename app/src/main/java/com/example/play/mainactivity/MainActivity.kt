@@ -1,5 +1,7 @@
 package com.example.play
 
+import android.media.AudioAttributes
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -21,6 +23,8 @@ class MainActivity : AppCompatActivity() {
     private val viewModel: MainActivityViewModel by viewModels()
     private lateinit var binding: ActivityMainBinding
 
+    private var mediaPlayer: MediaPlayer? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -29,7 +33,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val adapter = EpisodeRecyclerViewAdapter()
+        val adapter = EpisodeRecyclerViewAdapter { viewData ->
+            playURL(viewData.audioURL)
+        }
+
         binding.recyclerView.adapter = adapter
 
         viewModel.viewState.observe(this) { viewState ->
@@ -59,5 +66,20 @@ class MainActivity : AppCompatActivity() {
             viewModel.load()
         }
 
+    }
+
+    fun playURL(url: String) {
+
+        mediaPlayer = MediaPlayer().apply {
+            setAudioAttributes(
+                AudioAttributes.Builder()
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .setUsage(AudioAttributes.USAGE_MEDIA)
+                    .build()
+            )
+            setDataSource(url)
+            prepare() // might take long! (for buffering, etc)
+            start()
+        }
     }
 }
