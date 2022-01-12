@@ -1,7 +1,5 @@
 package com.example.play.apiclient.models
 
-import java.net.URL
-
 data class APIEpisode(
     val id: Int,
     val title: String,

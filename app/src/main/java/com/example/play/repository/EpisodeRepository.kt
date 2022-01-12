@@ -9,7 +9,7 @@ import java.net.URL
 fun APIEpisode.asEpisode(): Episode? {
     if (listenpodfile?.url != null) {
         // TODO: Parse URLs
-        return Episode(title, description, null, null)
+        return Episode(title, description, null, imageurl)
     } else {
         return null
     }

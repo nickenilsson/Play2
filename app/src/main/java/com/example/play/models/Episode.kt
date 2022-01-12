@@ -6,6 +6,6 @@ data class Episode(
     val title: String,
     val description: String?,
     // TODO: Not optional
-    val audioURL: URL?,
-    val imageURL: URL?
+    val audioURL: String?,
+    val imageURL: String?
     )
