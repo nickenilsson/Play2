@@ -1,6 +1,7 @@
 package com.example.play.apiclient.models
 
 import com.beust.klaxon.Klaxon
+import com.beust.klaxon.KlaxonException
 import com.github.kittinunf.fuel.httpGet
 import java.lang.Exception
 
@@ -18,8 +19,7 @@ class APIClient {
                             completionLambda(Result.success(apiEpisodesResponse))
                         }
                         else {
-                            // TODO: Use specific exception
-                            completionLambda(Result.failure(Exception()))
+                            completionLambda(Result.failure(KlaxonException("Failed to decode json")))
                         }
 
                     }
