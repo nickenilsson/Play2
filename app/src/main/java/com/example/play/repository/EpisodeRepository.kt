@@ -8,8 +8,7 @@ import java.lang.Exception
 
 fun APIEpisode.asEpisode(): Episode? {
     if (listenpodfile?.url != null) {
-        // TODO: Parse URLs
-        return Episode(title, description, null, imageurl)
+        return Episode(title, description, listenpodfile.url, imageurl)
     } else {
         return null
     }
