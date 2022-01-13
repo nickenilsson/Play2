@@ -8,7 +8,7 @@ import java.lang.Exception
 
 fun APIEpisode.asEpisode(): Episode? {
     if (listenpodfile?.url != null) {
-        return Episode(title, description, listenpodfile.url, imageurl)
+        return Episode(id, title, description, listenpodfile.url, imageurl)
     } else {
         return null
     }

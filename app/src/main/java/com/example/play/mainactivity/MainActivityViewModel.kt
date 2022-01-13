@@ -18,6 +18,7 @@ class MainActivityViewModel: ViewModel() {
             result.fold({ episodes ->
                 val viewData = episodes.map { episode ->
                     EpisodeViewHolder.ViewData(
+                        episode.id,
                         episode.title,
                         episode.description,
                         episode.audioURL,

@@ -15,5 +15,9 @@
     <fragment
         android:id="@+id/episodeDetailedFragment"
         android:name="com.example.play.EpisodeDetailedFragment"
-        android:label="EpisodeDetailedFragment" />
+        android:label="EpisodeDetailedFragment" >
+        <argument
+            android:name="episodeId"
+            app:argType="integer" />
+    </fragment>
 </navigation>

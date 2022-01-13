@@ -10,6 +10,7 @@ class EpisodeViewHolder(
     : RecyclerView.ViewHolder(binding.root) {
 
     data class ViewData(
+        val episodeId: Int,
         val title: String,
         val subtitle: String?,
         val audioURL: String,

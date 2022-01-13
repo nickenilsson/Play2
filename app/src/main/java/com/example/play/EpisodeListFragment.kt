@@ -39,7 +39,7 @@ class EpisodeListFragment: Fragment() {
         binding.recyclerView.layoutManager = LinearLayoutManager(activity)
 
         val adapter = EpisodeRecyclerViewAdapter { viewData ->
-            val action = EpisodeListFragmentDirections.actionEpisodeListFragmentToEpisodeDetailedFragment()
+            val action = EpisodeListFragmentDirections.actionEpisodeListFragmentToEpisodeDetailedFragment(viewData.episodeId)
             findNavController().navigate(action)
         }
 
