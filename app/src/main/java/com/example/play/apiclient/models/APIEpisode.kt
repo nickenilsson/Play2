@@ -15,3 +15,7 @@ data class APIPodfile(
 data class APIEpisodesResponse(
     val episodes: List<APIEpisode>
 )
+
+data class APIEpisodeResponse(
+    val episode: APIEpisode
+)

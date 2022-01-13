@@ -6,13 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isGone
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.example.play.databinding.EpisodeDetailedViewBinding
 import com.bumptech.glide.Glide
+import com.example.play.repository.EpisodeRepository
 
 class EpisodeDetailedFragmentViewModelFactory(
     private val episodeId: Int
@@ -27,13 +27,29 @@ class EpisodeDetailedFragmentViewModelFactory(
 }
 
 class EpisodeDetailedFragmentViewModel(private val episodeId: Int): ViewModel() {
+
+    private val episodeRepository = EpisodeRepository()
+
     val viewState = MutableLiveData<EpisodeDetailedFragment.ViewState>(EpisodeDetailedFragment.ViewState.Loading())
     val title = MutableLiveData<String?>(null)
     val description = MutableLiveData<String?>(null)
     val imageURL = MutableLiveData<String?>(null)
 
-    
+    fun load() {
+        viewState.postValue(EpisodeDetailedFragment.ViewState.Loading())
 
+        episodeRepository.getEpisode(episodeId) { result ->
+            result.fold({ episode ->
+                viewState.postValue(EpisodeDetailedFragment.ViewState.Loaded())
+                title.postValue(episode.title)
+                description.postValue(episode.description)
+                imageURL.postValue(episode.imageURL)
+            }, { exception ->
+                viewState.postValue(EpisodeDetailedFragment.ViewState.Error())
+            })
+        }
+
+    }
 
 }
 
@@ -101,18 +117,15 @@ class EpisodeDetailedFragment: Fragment() {
         }
 
         viewModel.imageURL.observe(this) { imageURL ->
-            Glide.with(binding.root).load(viewModel.imageURL).into(binding.imageView)
+            Glide.with(binding.root).load(imageURL).into(binding.imageView)
         }
 
-    }
-    /*
-    fun newInstance(episodeId: Int): EpisodeDetailedFragment {
-        val args = Bundle()
-        args.putInt("EPISODE_ID", episodeId)
-        val fragment = EpisodeDetailedFragment()
-        fragment.arguments = args
-        return fragment
+        binding.buttonRetry.setOnClickListener {
+            viewModel.load()
+        }
+
+        viewModel.load()
+
     }
 
-     */
 }
