@@ -20,9 +20,17 @@
             android:id="@+id/buttonPlay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="Spela"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+        <Button
+            android:id="@+id/buttonPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/buttonPlay"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            android:text="Stoppa" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -39,10 +47,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Text"
-            app:layout_constraintBottom_toBottomOf="@+id/buttonPlay"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonPause"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/buttonPlay"
-            app:layout_constraintTop_toTopOf="@+id/buttonPlay" />
+            app:layout_constraintStart_toEndOf="@id/buttonPause"
+            app:layout_constraintTop_toTopOf="@+id/buttonPause" />
 
         <TextView
             android:id="@+id/textViewDescription"
