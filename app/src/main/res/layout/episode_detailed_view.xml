@@ -16,23 +16,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         >
 
-        <Button
+        <ImageButton
             android:id="@+id/buttonPlay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Spela"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageView"
-            android:layout_margin="8dp"/>
-
-        <Button
-            android:id="@+id/buttonPause"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/buttonPlay"
-            app:layout_constraintTop_toBottomOf="@id/imageView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_margin="8dp"
-            android:text="Stoppa" />
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_playroundblack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+        <ImageButton
+            android:id="@+id/buttonPause"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="8dp"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_pauseroundblack"
+            app:layout_constraintStart_toEndOf="@id/buttonPlay"
+            app:layout_constraintTop_toBottomOf="@id/imageView" />
 
         <ImageView
             android:id="@+id/imageView"

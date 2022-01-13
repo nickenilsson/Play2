@@ -70,6 +70,7 @@ class EpisodeListFragment: Fragment() {
         binding.button.setOnClickListener {
             viewModel.load()
         }
+
     }
 
 }
