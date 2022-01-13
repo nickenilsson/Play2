@@ -10,7 +10,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.play.databinding.ActivityMainBinding
-import com.example.play.mainactivity.MainActivityViewModel
 import com.example.play.viewholders.EpisodeViewHolder
 
 class EpisodeListFragment: Fragment() {
@@ -23,7 +22,7 @@ class EpisodeListFragment: Fragment() {
 
     private lateinit var binding: ActivityMainBinding
 
-    private val viewModel: MainActivityViewModel by viewModels()
+    private val viewModel: EpisodeListFragmentViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

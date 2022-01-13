@@ -1,13 +1,11 @@
-package com.example.play.mainactivity
+package com.example.play
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.play.EpisodeListFragment
-import com.example.play.MainActivity
 import com.example.play.repository.EpisodeRepository
 import com.example.play.viewholders.EpisodeViewHolder
 
-class MainActivityViewModel: ViewModel() {
+class EpisodeListFragmentViewModel: ViewModel() {
 
     private val repository = EpisodeRepository()
 
