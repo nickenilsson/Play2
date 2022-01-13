@@ -3,7 +3,6 @@ package com.example.play
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -52,7 +51,7 @@ class EpisodeDetailedFragmentViewModel(private val episodeId: Int): ViewModel() 
                 viewState.postValue(EpisodeDetailedFragment.ViewState.Loaded())
                 title.postValue(episode.title)
                 description.postValue(episode.description)
-                imageURL.postValue(episode.imageURL)
+                imageURL.postValue(episode.imageURLWide)
             }, { exception ->
                 viewState.postValue(EpisodeDetailedFragment.ViewState.Error())
             })

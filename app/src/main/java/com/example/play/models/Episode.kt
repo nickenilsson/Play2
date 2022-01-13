@@ -5,5 +5,6 @@ data class Episode(
     val title: String,
     val description: String?,
     val audioURL: String,
-    val imageURL: String?
+    val imageURLSquare: String?,
+    val imageURLWide: String?
     )

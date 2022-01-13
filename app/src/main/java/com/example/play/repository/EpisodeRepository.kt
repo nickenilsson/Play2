@@ -8,7 +8,10 @@ import com.example.play.models.Episode
 
 fun APIEpisode.asEpisode(): Episode? {
     if (listenpodfile?.url != null) {
-        return Episode(id, title, description, listenpodfile.url, imageurl)
+        val imageUrlWide = imageurltemplate?.let {
+            it + "?preset=api-fullwidth-medium"
+        }
+        return Episode(id, title, description, listenpodfile.url, imageurl, imageUrlWide)
     } else {
         return null
     }

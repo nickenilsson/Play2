@@ -20,7 +20,7 @@ class EpisodeListFragmentViewModel: ViewModel() {
                         episode.title,
                         episode.description,
                         episode.audioURL,
-                        episode.imageURL
+                        episode.imageURLSquare
                     )
                 }
                 viewState.postValue(EpisodeListFragment.ViewState.Loaded(viewData))
