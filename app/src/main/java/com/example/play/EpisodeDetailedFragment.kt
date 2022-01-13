@@ -28,10 +28,6 @@ class EpisodeDetailedFragmentViewModel(private val episodeId: Int): ViewModel() 
     val title: String = "P3 Dok"
     val description: String? = "episode.description"
     val imageURL: String? = "https://static-cdn.sr.se/images/909/77df221e-356c-428a-8407-102b127eb343.png"
-
-    init {
-        val test = episodeId
-    }
 }
 
 
