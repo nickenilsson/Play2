@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/activity_main_host.xml" value="0.12681159420289856" />
+        <entry key="app/src/main/res/layout/episode_detailed_view.xml" value="0.14719202898550723" />
         <entry key="app/src/main/res/layout/episode_view.xml" value="0.17300724637681159" />
       </map>
     </option>
