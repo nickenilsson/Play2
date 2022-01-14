@@ -11,7 +11,7 @@ fun APIEpisode.asEpisode(): Episode? {
         val imageUrlWide = imageurltemplate?.let {
             it + "?preset=api-fullwidth-medium"
         }
-        return Episode(id, title, description, listenpodfile.url, imageurl, imageUrlWide)
+        return Episode(id, title, description, text, listenpodfile.url, imageurl, imageUrlWide)
     } else {
         return null
     }

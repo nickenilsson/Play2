@@ -50,7 +50,7 @@ class EpisodeDetailedFragmentViewModel(private val episodeId: Int): ViewModel() 
                 this.episode = episode
                 viewState.postValue(EpisodeDetailedFragment.ViewState.Loaded())
                 title.postValue(episode.title)
-                description.postValue(episode.description)
+                description.postValue(episode.fullDescription)
                 imageURL.postValue(episode.imageURLWide)
             }, { exception ->
                 viewState.postValue(EpisodeDetailedFragment.ViewState.Error())

@@ -12,6 +12,7 @@ class EpisodeListFragmentViewModel: ViewModel() {
     val viewState: MutableLiveData<EpisodeListFragment.ViewState> = MutableLiveData(EpisodeListFragment.ViewState.Loading())
 
     fun load() {
+        viewState.postValue(EpisodeListFragment.ViewState.Loading())
         repository.getPopularEpisodes { result ->
             result.fold({ episodes ->
                 val viewData = episodes.map { episode ->
